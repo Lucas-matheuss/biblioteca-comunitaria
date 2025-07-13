@@ -1,0 +1,17 @@
+{
+  "name": "biblioteca-comunitaria",
+  "version": "1.0.0",
+  "description": "projeto de uma biblioteca comunitária",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
