@@ -20,7 +20,7 @@ function createUserRepository(newUser) {
         [username, email, password, avatar], 
         (err) => {
             if (err) {
-                return rej(err);
+                rej(err);
             }
             res({ id: this.lastID, ...newUser });
         });
