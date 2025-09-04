@@ -2,25 +2,29 @@ import { Router } from "express";
 import userController from '../controller/user.controllers.js';
 import { validate, validateUserId } from "../middlewares/validation.middleware.js";
 import { userSchema } from "../schema/user.schema.js";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
 
-router.post('/users', validate(userSchema), userController.createUserController);
+router.post('/', validate(userSchema), userController.createUserController);
 
-router.get('/users', userController.findAllUsersController);
+router.post('/login', userController.loginUserController);
+
+router.use(authMiddleware); // Apply authentication middleware to all routes below
+router.get('/', userController.findAllUsersController);
 router.get(
-    '/users/:id',
+    '/:id',
      validateUserId ,
      userController.findUserByIdController
 );
 router.patch(
-    '/users/:id',
+    '/:id',
      validateUserId, 
      userController.updateUserController
 );   
 router.delete(
-    '/users/:id', 
+    '/:id', 
     validateUserId, 
     userController.deleteUserController
 );                                                

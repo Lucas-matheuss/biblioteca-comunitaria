@@ -1,11 +1,18 @@
 import express from 'express'
-import userRoutes from './src/routes/user.routes.js';
+import { routers } from "./src/routes/index.js"
+import "./src/service/cron.service.js"
+import "dotenv/config";
+
 const app = express()
 
-app.use(express.json()) // Middleware para analisar JSON no corpo da requisição
-app.use(userRoutes)
+const port = process.env.PORT || 3000;
+
+app.use(express.json()) 
+app.use(routers)
 
 
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000')
+
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`)
 });

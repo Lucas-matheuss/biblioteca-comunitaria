@@ -1,11 +1,23 @@
 import { ca, tr } from "zod/locales";
 import userService  from "../service/user.services.js";
+import { loginService } from "../service/auth.sevice.js";
 
 async function createUserController(req, res) {
   const newUser = req.body;
   try {
-    const user = await userService.createUserService(newUser);
-    res.status(201).send({user})
+    const token = await userService.createUserService(newUser);
+    res.status(201).send({ token })
+  } catch (error) {
+    return res.status(400).send(error.message);
+  }
+}
+
+async function loginUserController(req, res) {
+  const {email, password} = req.body;
+
+  try {
+    const token = await loginService(email, password);
+    res.send({ token })
   } catch (error) {
     return res.status(400).send(error.message);
   }
@@ -58,5 +70,6 @@ export default {
   findAllUsersController,
   findUserByIdController,
   updateUserController,
-  deleteUserController
+  deleteUserController,
+  loginUserController
 }
