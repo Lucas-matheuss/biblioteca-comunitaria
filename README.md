@@ -34,6 +34,8 @@ Um sistema completo de gerenciamento de biblioteca construído com Node.js, Expr
 - **Agendamento**: node-cron
 
 ## 📦 Estrutura do Projeto
+
+
 src/
 ├── config/
 │ └── database.js # Configuração do banco SQLite
