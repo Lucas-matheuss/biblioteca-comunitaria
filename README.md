@@ -39,10 +39,12 @@ Um sistema completo de gerenciamento de biblioteca construído com Node.js, Expr
 src/
 ├── config/
 │ └── database.js # Configuração do banco SQLite
+|
 ├── controller/
 │ ├── book.controllers.js # Controladores para livros
 │ ├── loan.controller.js # Controladores para empréstimos
 │ └── user.controllers.js # Controladores para usuários
+|
 ├── middlewares/
 │ ├── auth.middleware.js # Middleware de autenticação
 │ └── validation.middleware.js # Middleware de validação
@@ -50,21 +52,25 @@ src/
 │ ├── book.repositories.js # Operações de banco para livros
 │ ├── loan.repositories.js # Operações de banco para empréstimos
 │ └── user.repositories.js # Operações de banco para usuários
+|
 ├── routes/
 │ ├── book.routes.js # Rotas para livros
 │ ├── index.js # Agrupador de rotas
 │ ├── loan.routes.js # Rotas para empréstimos
 │ └── user.routes.js # Rotas para usuários
+|
 ├── schema/
 │ ├── book.schema.js # Schemas de validação para livros
 │ ├── loan.schema.js # Schemas de validação para empréstimos
 │ └── user.schema.js # Schemas de validação para usuários
+|
 ├── service/
 │ ├── auth.service.js # Serviços de autenticação
 │ ├── book.service.js # Serviços para livros
 │ ├── cron.service.js # Serviço de tarefas agendadas
 │ ├── loan.service.js # Serviços para empréstimos
 │ └── user.services.js # Serviços para usuários
+|
 └── index.js # Ponto de entrada da aplicação
 
 
