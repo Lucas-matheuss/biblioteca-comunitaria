@@ -15,7 +15,7 @@ cron.schedule("25 * * * *", async () => {
         const reminderDueDate = moment(dueDate).subtract(1, 'days');
 
         if (today.isSame(reminderDueDate)) {
-            sendEmail(loans.email, loans.title, loan.dueDate);
+            sendEmail(loan.email, loan.title, loan.dueDate);
         }
     });
 });

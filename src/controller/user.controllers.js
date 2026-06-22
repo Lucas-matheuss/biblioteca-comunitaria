@@ -1,6 +1,5 @@
-import { ca, tr } from "zod/locales";
 import userService  from "../service/user.services.js";
-import { loginService } from "../service/auth.sevice.js";
+import { loginService } from "../service/auth.service.js";
 
 async function createUserController(req, res) {
   const newUser = req.body;

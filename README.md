@@ -92,7 +92,7 @@ src/
 ```bash
 npm install
 ```
-3. Configure as variáveis de ambiente
+3.Configure as variáveis de ambiente
 
 ```bash
 cp .env.example .env
@@ -103,7 +103,7 @@ text
 PORT=3000
 SECRET_JWT=seu_segredo_super_secreto_aqui
 
-4. Inicie o servidor
+4.Inicie o servidor
 
 ```bash
 npm start
@@ -113,7 +113,7 @@ Ou para desenvolvimento com auto-reload:
 ```bash
 npm run dev
 ```
-5. Acesse a API
+5.Acesse a API
 
 text
 http://localhost:3000
@@ -195,4 +195,26 @@ curl -X POST http://localhost:3000/books \
     "title": "Dom Casmurro",
     "author": "Machado de Assis"
   }'
-```
+📝 Scripts Disponíveis
+npm start - Inicia o servidor em produção
+
+npm run dev - Inicia o servidor em modo desenvolvimento
+
+npm test - Executa os testes (se houver)
+
+🤝 Contribuição
+Faça um fork do projeto
+
+Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
+
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+
+Push para a branch (git push origin feature/AmazingFeature)
+
+Abra um Pull Request
+
+📄 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+🆘 Suporte
+Se encontrar problemas ou tiver dúvidas, abra uma issue no repositório do projeto.

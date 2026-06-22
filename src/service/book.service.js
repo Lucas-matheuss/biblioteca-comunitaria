@@ -12,7 +12,7 @@ async function findAllBooksService() {
 }
 
 async function findBookByIdService(bookId) {
-    const book = await bookRepository.findBookById(bookId)
+    const book = await findBookByIdRepository(bookId)
     if (!book) throw new Error("Book not found");
     return book;
 }

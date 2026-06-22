@@ -1,5 +1,5 @@
 import userRepository from "../repositories/user.repositories.js"; 
-import { generateTokenJWT } from "./auth.sevice.js";
+import { generateTokenJWT } from "./auth.service.js";
 import bcrypt from 'bcrypt';
 
 async function createUserService(newUser) {

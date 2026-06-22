@@ -40,7 +40,7 @@ async function deleteLoanController(req, res) {
     const userId = req.userId
     
     try {
-        const response = await loanService.deleteLoanService(loanId)
+        const response = await loanService.deleteLoanService(loanId, userId)
         return res.send(response);
     } catch (error) {
         return res.status(400).send(error.message);
