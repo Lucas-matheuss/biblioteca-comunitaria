@@ -122,33 +122,33 @@ http://localhost:3000
 
 👥 Usuários
 
-| METODO | ROTA | DESCRIÇÂO |
-|--------|------|-----------|
-|POST | /users | - Criar novo usuário |
-|POST | /users/login | - Login de usuário |
-|GET | /users | - Listar todos os usuários (requer autenticação) |
-|GET | /users/:id | - Buscar usuário por ID (requer autenticação) |
-|PATCH | /users/:id | - Atualizar usuário (requer autenticação) |
-|DELETE | /users/:id |- Deletar usuário (requer autenticação) |
+| METODO | ROTA | DESCRIÇÂO | AUTENTICAÇÂO|
+|--------|------|-----------|-------------|
+|POST | /users | - Criar novo usuário | ❌ |
+|POST | /users/login | - Login de usuário | ❌ |
+|GET | /users | - Listar todos os usuários (requer autenticação) | ❌
+|GET | /users/:id | - Buscar usuário por ID (requer autenticação) | ✅ |
+|PATCH | /users/:id | - Atualizar usuário (requer autenticação) | ✅ |
+|DELETE | /users/:id |- Deletar usuário (requer autenticação) | ✅ |
 
 📚 Livros
 
-| METODO | ROTA | DESCRIÇÂO |
-|--------|------|-----------|
-| GET | /books | - Listar todos os livros |
-|POST | /books | - Criar novo livro (requer autenticação) |
+| METODO | ROTA | DESCRIÇÂO | AUTENTICAÇÂO |
+|--------|------|-----------|--------------|
+| GET | /books | - Listar todos os livros | ❌ |
+|POST | /books | - Criar novo livro | ✅ |
 |GET | /books/search?search=termo | - Buscar livros por título ou autor |
-|GET | /books/:id |- Buscar livro por ID |
-|PATCH | /books/:id |- Atualizar livro (requer autenticação) |
-|DELETE | /books/:id |- Deletar livro (requer autenticação) |
+|GET | /books/:id |- Buscar livro por ID | ❌| |
+|PATCH | /books/:id |- Atualizar livro | ✅ |
+|DELETE | /books/:id |- Deletar livro | ✅ |
 
 📋 Empréstimos
-| METODO | ROTA | DESCRIÇÂO |
-|--------|------|-----------|
-| POST | /loans | - Criar novo empréstimo |
-| GET | /loans | - Listar todos os empréstimos |
-| GET | /loans/:id | - Buscar empréstimo por ID |
-| DELETE | /loans/:id | - Deletar empréstimo |
+| METODO | ROTA | DESCRIÇÂO | AUTENTICAÇÂO |
+|--------|------|-----------|--------------|
+| POST | /loans | - Criar novo empréstimo | ❌ |
+| GET | /loans | - Listar todos os empréstimos | ❌|
+| GET | /loans/:id | - Buscar empréstimo por ID | ❌| |
+| DELETE | /loans/:id | - Deletar empréstimo | ✅ |
 
 🔐 Autenticação
 A maioria dos endpoints requer autenticação via JWT. Inclua o token no header das requisições:
