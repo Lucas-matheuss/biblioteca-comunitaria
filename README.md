@@ -35,7 +35,7 @@ Um sistema completo de gerenciamento de biblioteca construído com Node.js, Expr
 
 ## 📦 Estrutura do Projeto
 
-
+```
 src/
 ├── config/
 │ └── database.js # Configuração do banco SQLite
@@ -72,7 +72,7 @@ src/
 │ └── user.services.js # Serviços para usuários
 |
 └── index.js # Ponto de entrada da aplicação
-
+```
 
 ## 🚀 Como Executar
 
@@ -87,71 +87,68 @@ src/
    git clone <https://github.com/Lucas-matheuss/biblioteca-comunitaria.git>
    cd library-management-system
 
-2.Instale as dependências
+2. Instale as dependências
 
-bash
+```bash
 npm install
+```
+3. Configure as variáveis de ambiente
 
-3.Configure as variáveis de ambiente
-
-bash
+```bash
 cp .env.example .env
-Edite o arquivo .env com suas configurações:
+```
 
+Edite o arquivo .env com suas configurações:
 text
 PORT=3000
 SECRET_JWT=seu_segredo_super_secreto_aqui
 
-4.Inicie o servidor
+4. Inicie o servidor
 
-bash
+```bash
 npm start
-
+```
 Ou para desenvolvimento com auto-reload:
 
-bash
+```bash
 npm run dev
-
-5.Acesse a API
+```
+5. Acesse a API
 
 text
 http://localhost:3000
 
 📡 Endpoints da API
+
 👥 Usuários
-POST /users - Criar novo usuário
 
-POST /users/login - Login de usuário
-
-GET /users - Listar todos os usuários (requer autenticação)
-
-GET /users/:id - Buscar usuário por ID (requer autenticação)
-
-PATCH /users/:id - Atualizar usuário (requer autenticação)
-
-DELETE /users/:id - Deletar usuário (requer autenticação)
+| METODO | ROTA | DESCRIÇÂO |
+|--------|------|-----------|
+|POST | /users | - Criar novo usuário |
+|POST | /users/login | - Login de usuário |
+|GET | /users | - Listar todos os usuários (requer autenticação) |
+|GET | /users/:id | - Buscar usuário por ID (requer autenticação) |
+|PATCH | /users/:id | - Atualizar usuário (requer autenticação) |
+|DELETE | /users/:id |- Deletar usuário (requer autenticação) |
 
 📚 Livros
-GET /books - Listar todos os livros
 
-POST /books - Criar novo livro (requer autenticação)
-
-GET /books/search?search=termo - Buscar livros por título ou autor
-
-GET /books/:id - Buscar livro por ID
-
-PATCH /books/:id - Atualizar livro (requer autenticação)
-
-DELETE /books/:id - Deletar livro (requer autenticação)
+| METODO | ROTA | DESCRIÇÂO |
+|--------|------|-----------|
+| GET | /books | - Listar todos os livros |
+|POST | /books | - Criar novo livro (requer autenticação) |
+|GET | /books/search?search=termo | - Buscar livros por título ou autor |
+|GET | /books/:id |- Buscar livro por ID |
+|PATCH | /books/:id |- Atualizar livro (requer autenticação) |
+|DELETE | /books/:id |- Deletar livro (requer autenticação) |
 
 📋 Empréstimos
-POST /loans - Criar novo empréstimo
-
-GET /loans - Listar todos os empréstimos
-
-GET /loans/:id - Buscar empréstimo por ID
-
-DELETE /loans/:id - Deletar empréstimo
+| METODO | ROTA | DESCRIÇÂO |
+|--------|------|-----------|
+| POST | /loans | - Criar novo empréstimo |
+| GET | /loans | - Listar todos os empréstimos |
+| GET | /loans/:id | - Buscar empréstimo por ID |
+| DELETE | /loans/:id | - Deletar empréstimo |
 
 🔐 Autenticação
 A maioria dos endpoints requer autenticação via JWT. Inclua o token no header das requisições:
@@ -171,7 +168,7 @@ As tabelas são criadas automaticamente na primeira execução.
 
 🧪 Exemplos de Uso
 Criar Usuário
-bash
+```bash
 curl -X POST http://localhost:3000/users \
   -H "Content-Type: application/json" \
   -d '{
@@ -179,16 +176,18 @@ curl -X POST http://localhost:3000/users \
     "email": "joao@email.com",
     "password": "senha123"
   }'
+```
 Fazer Login
-bash
+```bash
 curl -X POST http://localhost:3000/users/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "joao@email.com",
     "password": "senha123"
   }'
+```
 Criar Livro (com autenticação)
-bash
+```bash
 curl -X POST http://localhost:3000/books \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <seu_token>" \
@@ -196,9 +195,4 @@ curl -X POST http://localhost:3000/books \
     "title": "Dom Casmurro",
     "author": "Machado de Assis"
   }'
-📝 Scripts Disponíveis
-npm start - Inicia o servidor em produção
-
-npm run dev - Inicia o servidor em modo desenvolvimento
-
-npm test - Executa os testes (se houver)
+```
